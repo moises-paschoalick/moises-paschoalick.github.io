@@ -1,8 +1,47 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
+
 <head>
-<title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Patterns Learning Portal</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
-<meta http-equiv="refresh" content="1; URL='https://devsuperior-sds5-dsvendas.netlify.app/'"/> 
+    <div class="app-container">
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <h1>Design Patterns</h1>
+                <p>A Jornada da Evolução</p>
+            </header>
+            <nav id="sidebar-nav" class="sidebar-nav">
+                <!-- Tópicos serão carregados aqui via JS -->
+                <ul id="topic-list"></ul>
+            </nav>
+        </aside>
+
+        <main class="content-area">
+            <div id="content-loader" class="loader" style="display: none;">Carregando...</div>
+            <article id="main-content" class="content">
+                <!-- Conteúdo dinâmico aqui -->
+                <div class="welcome-screen">
+                    <h2>Bem-vindo ao Portal de Design Patterns</h2>
+                    <p>Selecione um tópico no menu lateral para começar sua jornada de aprendizado.</p>
+                </div>
+            </article>
+
+            <footer class="content-footer">
+                <button id="prev-btn" class="nav-btn" disabled>← Anterior</button>
+                <button id="next-btn" class="nav-btn" disabled>Próximo →</button>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/zoom-controller.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/code-interact.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,9 @@
+{
+    "title": "28. Composição vs Herança",
+    "pain": "O uso excessivo de herança pode levar a hierarquias rígidas e frágeis. Alterações na superclasse podem quebrar subclasses (Superclasse Frágil) e dificultar a reutilização de comportamento.",
+    "cure": "Favorecer a composição permite construir funcionalidades combinando objetos simples. Isso proporciona maior flexibilidade, pois os componentes podem ser trocados em tempo de execução.",
+    "explanation": "No exemplo, o 'Notebook' não herda de uma classe de precificação. Em vez disso, ele 'tem uma' estratégia de precificação. Isso permite mudar como o notebook é cobrado apenas injetando um objeto diferente.",
+    "codeFile": "Notebook.java (Composição)",
+    "githubUrl": "https://github.com/moises-paschoalick/algawoks-especialista-java/tree/main/15.%20Boas%20Praticas%20de%20Heranca%20e%20Interfaces/15.02.%20Rigidez%20do%20c%C3%B3digo%20com%20heran%C3%A7a/locadora-notebooks",
+    "code": "// Notebook usa COMPOSIÇÃO com Precificacao\npublic class Notebook {\n    private String descricao;\n    private double precoPorHora;\n    private double precoPorDia;\n\n    // Em uma versão com herança, teríamos NotebookPorHora, NotebookPorDia...\n    // Com composição, o Notebook permanece o mesmo e a estratégia muda.\n\n    public Notebook(String descricao, double precoPorHora, double precoPorDia) {\n        this.descricao = descricao;\n        this.precoPorHora = precoPorHora; \n        this.precoPorDia = precoPorDia;\n    }\n    \n    // Getters e Setters...\n}"
+}

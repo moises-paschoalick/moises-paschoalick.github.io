@@ -1,0 +1,9 @@
+{
+    "title": "29. Classe Abstrata vs Interface",
+    "pain": "Tentar usar classes concretas para definir contratos ou usar interfaces quando há necessidade de compartilhar estado e comportamento entre classes relacionadas.",
+    "cure": "Use Classes Abstratas para compartilhar código entre classes 'é um'. Use Interfaces para definir contratos de comportamento 'capaz de' para classes de diferentes hierarquias.",
+    "explanation": "'NotaFiscal' é abstrata pois define atributos comuns e um template de emissão, mas o imposto é específico. 'ClienteFinanciavel' é uma interface que define um contrato que qualquer tipo de cliente pode implementar.",
+    "codeFile": "NotaFiscal.java / ClienteFinanciavel.java",
+    "githubUrl": "https://github.com/moises-paschoalick/algawoks-especialista-java",
+    "code": "// Classe Abstrata (Compartilha Estado/Comportamento)\npublic abstract class NotaFiscal {\n    private String descricao;\n    public abstract double calcularImpostos();\n    \n    public void emitir() {\n        System.out.println(\"Emitindo: \" + descricao);\n        System.out.println(\"Imposto: \" + calcularImpostos());\n    }\n}\n\n// Interface (Define Contrato)\npublic interface ClienteFinanciavel {\n    double calcularLimiteAprovado();\n    \n    default double calcularJuros(double valor) {\n        return valor * 0.1;\n    }\n}"
+}

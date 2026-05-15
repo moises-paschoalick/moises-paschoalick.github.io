@@ -1,0 +1,9 @@
+{
+    "title": "1. Alto Acoplamento",
+    "pain": "Tudo depende de tudo. Se você altera uma classe de banco de dados, a interface do usuário quebra. O código é rígido e impossível de testar isoladamente.",
+    "cure": "Introduzir abstrações (interfaces) e inverter a dependência. As classes devem depender de contratos, não de implementações concretas.",
+    "explanation": "O alto acoplamento ocorre quando uma classe conhece detalhes demais sobre outra. Neste exemplo, veja como a classe de serviço instancia diretamente o repositório, criando uma dependência física forte.",
+    "codeFile": "PedidoService.java (Acoplado)",
+    "githubUrl": "https://github.com/moises-paschoalick/java-with-examples-and-design-patterns",
+    "code": "public class PedidoService {\n    // RUIM: Dependência direta de implementação concreta\n    private MySQLRepository repository = new MySQLRepository();\n\n    public void processar(Pedido pedido) {\n        // ... lógica de negócio\n        repository.salvar(pedido);\n    }\n}"
+}

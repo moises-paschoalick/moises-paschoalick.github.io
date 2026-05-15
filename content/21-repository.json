@@ -1,0 +1,9 @@
+{
+    "title": "21. Repository",
+    "pain": "Acoplar a lógica de negócio diretamente com o mecanismo de persistência (JDBC, JPA, etc) dificulta a troca da tecnologia de banco de dados e torna os testes unitários dependentes de infraestrutura.",
+    "cure": "O padrão Repository abstrai o acesso aos dados, tratando-os como uma coleção de objetos em memória, isolando a lógica de negócio dos detalhes de armazenamento.",
+    "explanation": "A interface 'VendaRepositorio' define os métodos de manipulação. A implementação 'MemoriaVendaRepositorio' usa uma lista em memória. Para mudar para um banco real, basta criar uma nova implementação da interface.",
+    "codeFile": "VendaRepositorio.java / MemoriaVendaRepositorio.java",
+    "githubUrl": "https://github.com/moises-paschoalick/algawoks-especialista-java/tree/main/34.%20Padrao%20repository/34.02.%20Criando%20entidade%20e%20camada%20de%20servi%C3%A7o/comercial",
+    "code": "// Interface\npublic interface VendaRepositorio {\n    Venda adicionar(Venda venda);\n    List<Venda> consultar();\n}\n\n// Implementação em Memória\npublic class MemoriaVendaRepositorio implements VendaRepositorio {\n    private static final List<Venda> vendas = new ArrayList<>();\n\n    @Override\n    public Venda adicionar(Venda venda) {\n        vendas.add(venda);\n        return venda;\n    }\n\n    @Override\n    public List<Venda> consultar() {\n        return Collections.unmodifiableList(vendas);\n    }\n}"
+}

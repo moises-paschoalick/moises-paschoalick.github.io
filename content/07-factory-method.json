@@ -1,0 +1,13 @@
+{
+    "title": "7. Factory Method",
+    "pain": "Sem o Factory Method, o código cliente precisa usar 'new' para cada implementação concreta (ex: new ProdutoFisico2(), new ProdutoDigital2()). Isso cria um alto acoplamento e espalha 'if/else' gigantes pelo sistema sempre que um novo tipo de objeto precisa ser criado.",
+    "cure": "O Factory Method encapsula a criação de objetos. Uma classe 'Criadora' (Categoria2) define um método (novoProduto) para criar o objeto, permitindo que as subclasses (CategoriaDigital) decidam qual classe concreta instanciar.",
+    "explanation": "# Factory Method em Java — Explicação Didática\n\n## Objetivo do padrão Factory Method\n\nO padrão de projeto **Factory Method** serve para:\n\n- encapsular a criação de objetos\n- desacoplar quem usa do objeto concreto\n- facilitar extensão do sistema\n- evitar `if/else` gigantes para criar objetos\n\nA ideia principal é:\n> Uma classe fica responsável por criar os objetos.\n\nEm vez do código cliente instanciar produtos concretos diretamente, ele apenas pede: `novoProduto()` e a fábrica decide qual objeto criar.\n\n---\n\n# Estrutura do padrão\n\n| Papel | Classe |\n|---|---|\n| Produto Abstrato | `Produto2` |\n| Produtos Concretos | `ProdutoFisico2`, `ProdutoDigital2` |\n| Criador | `Categoria2` |\n| Criador Especializado | `CategoriaDigital` |\n\n---\n\n# O ponto mais importante\n\nO código cliente **NÃO sabe** qual classe concreta será criada. Ele trabalha apenas com a abstração `Produto2`. Isso reduz acoplamento e ajuda no **Open/Closed Principle**: você adiciona novas implementações sem alterar código já existente.\n\n---\n\n# Analogia simples: A Cafeteria\n\nImagine uma cafeteria. Você pede: \"Quero um café\". Você não prepara o café manualmente. A cafeteria escolhe ingredientes, prepara, monta e entrega pronto. Ela funciona como uma fábrica.",
+    "codeFile": "FactoryMethod_2.java",
+    "githubUrl": "https://github.com/moises-paschoalick/design-patterns",
+    "code": "public interface Produto2 {\n}\n\npublic class Categoria2 {\n    // Factory Method\n    public Produto2 novoProduto() {\n        System.out.println(\"Criando Produto Fisico 2\");\n        return new ProdutoFisico2();\n    }\n}\n\nclass CategoriaDigital extends Categoria2 {\n    @Override\n    public Produto2 novoProduto() {\n        System.out.println(\"Criando Produto Digital 2\");\n        return new ProdutoDigital2();\n    }\n}",
+    "images": [
+        "assets/images/factory_mehtod_01.png",
+        "assets/images/factory_method_02.png"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "title": "9. Strategy",
+    "pain": "O uso excessivo de condicionais (if/else ou switch) para selecionar diferentes algoritmos de negócio torna o código rígido, difícil de testar e viola o Princípio do Aberto/Fechado (OCP).",
+    "cure": "O padrão Strategy encapsula cada algoritmo em uma classe separada que implementa uma interface comum. Isso permite que o algoritmo varie independentemente dos clientes que o utilizam.",
+    "explanation": "No exemplo da locadora de notebooks, a interface 'Precificacao' define o contrato. Diferentes implementações como 'PrecificacaoPorDia' e 'PrecificacaoPorHora' permitem trocar a lógica de cobrança sem alterar a classe Notebook ou o cliente.",
+    "codeFile": "Precificacao.java / PrecificacaoPorDia.java",
+    "githubUrl": "https://github.com/moises-paschoalick/algawoks-especialista-java/tree/main/15.%20Boas%20Praticas%20de%20Heranca%20e%20Interfaces/15.02.%20Rigidez%20do%20c%C3%B3digo%20com%20heran%C3%A7a/locadora-notebooks",
+    "code": "// Interface\npublic interface Precificacao {\n    double calcularValorTotal(Notebook notebook, int horasUtilizadas);\n}\n\n// Estratégia por Dia\npublic class PrecificacaoPorDia implements Precificacao {\n    @Override\n    public double calcularValorTotal(Notebook notebook, int horasUtilizadas) {\n        double dias = Math.ceil(horasUtilizadas / 24d);\n        return notebook.getPrecoPorDia() * dias;\n    }\n}\n\n// Estratégia por Hora\npublic class PrecificacaoPorHora implements Precificacao {\n    @Override\n    public double calcularValorTotal(Notebook notebook, int horasUtilizadas) {\n        return notebook.getPrecoPorHora() * horasUtilizadas;\n    }\n}"
+}
