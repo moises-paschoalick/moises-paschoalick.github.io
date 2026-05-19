@@ -11,7 +11,7 @@
     {"id": "10-state", "title": "10. State"},
     {"id": "11-template-method", "title": "11. Template Method"},
     {"id": "12-observer", "title": "12. Observer"},
-    {"id": "13-adapter", "title": "13. Adapter"},
+    {"id": "13-adapter", "title": "13. Adapter", "completed": true},
     {"id": "14-facade", "title": "14. Facade"},
     {"id": "15-decorator", "title": "15. Decorator"},
     {"id": "16-chain-of-responsibility", "title": "16. Chain of Responsibility"},

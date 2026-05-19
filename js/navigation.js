@@ -84,13 +84,13 @@ function renderContent(content) {
                 ${content.images.map((img, index) => `
                     <div class="image-viewer-container" id="zoom-container-${index}">
                         <img src="${img}" id="zoom-img-${index}" class="zoomable-image" alt="Visualização Didática">
-                        <div class="zoom-controls">
-                            <button class="zoom-btn" onclick="window.zoomIn(${index})">+</button>
-                            <button class="zoom-btn" onclick="window.zoomOut(${index})">−</button>
-                            <button class="zoom-btn" onclick="window.zoomReset(${index})">⟲</button>
-                        </div>
                     </div>
-                    <p class="image-caption">Dica: Use o mouse para arrastar e a roda para dar zoom.</p>
+                    <div class="zoom-controls">
+                        <button class="zoom-btn" onclick="window.zoomIn(${index})">+</button>
+                        <button class="zoom-btn" onclick="window.zoomOut(${index})">−</button>
+                        <button class="zoom-btn" onclick="window.zoomReset(${index})">⟲</button>
+                    </div>
+                    <p class="image-caption">Use os botões para ampliar ou reduzir a imagem.</p>
                 `).join('')}
             </section>
         `;

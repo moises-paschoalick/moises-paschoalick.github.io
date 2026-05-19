@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(openspec explorer *)",
+      "Bash(openspec *)",
+      "Bash(docker compose *)",
+      "Bash(echo \"BUILD_EXIT_CODE=$?\")",
+      "Bash(curl -s http://localhost:8080/api/missions)",
+      "Bash(python3 -m json.tool)",
+      "Bash(curl -s http://localhost:8080/api/topics)",
+      "Bash(curl -s http://localhost/)",
+      "Bash(curl -s -H \"Origin: http://localhost\" -H \"Access-Control-Request-Method: GET\" http://localhost:8080/api/missions -v)",
+      "mcp__ide__getDiagnostics",
+      "Bash(curl -s http://localhost/public/js/app.js)",
+      "Bash(node --input-type=module)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -X POST http://localhost:8080/api/analysis -H 'Content-Type: application/json' -d '{\"code\": \"class Car { private DieselEngine engine = new DieselEngine\\(\\); }\"}')",
+      "Bash(curl -s -X POST http://localhost:8080/api/analysis -H 'Content-Type: application/json' -d '{\"code\": \"class Car { private DieselEngine engine = new DieselEngine\\(\\); public void start\\(\\) { engine.start\\(\\); } }\"}')",
+      "Bash(docker build *)",
+      "Bash(curl -s -X POST http://localhost:8080/api/run -H 'Content-Type: application/json' -d '{\"code\": \"public class Main { public static void main\\(String[] args\\) { System.out.println\\(\\\\\"Diesel engine started\\\\\"\\); } }\"}')",
+      "Bash(node *)",
+      "Bash(docker exec pattern-quest-frontend *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git checkout *)"
+    ]
+  }
+}

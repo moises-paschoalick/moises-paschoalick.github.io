@@ -20,34 +20,6 @@ class ImageZoomController {
     }
 
     setupEvents() {
-        // Zoom on Wheel
-        this.container.addEventListener('wheel', (e) => {
-            e.preventDefault();
-            const delta = e.deltaY > 0 ? 0.9 : 1.1;
-            this.zoom(delta);
-        });
-
-        // Drag to Pan
-        this.container.addEventListener('mousedown', (e) => {
-            this.isDragging = true;
-            this.startX = e.clientX - this.translateX;
-            this.startY = e.clientY - this.translateY;
-            this.container.style.cursor = 'grabbing';
-        });
-
-        window.addEventListener('mousemove', (e) => {
-            if (!this.isDragging) return;
-            this.translateX = e.clientX - this.startX;
-            this.translateY = e.clientY - this.startY;
-            this.applyTransform();
-        });
-
-        window.addEventListener('mouseup', () => {
-            this.isDragging = false;
-            this.container.style.cursor = 'grab';
-        });
-
-        // Prevention for image drag behavior
         this.img.addEventListener('dragstart', (e) => e.preventDefault());
     }
 
