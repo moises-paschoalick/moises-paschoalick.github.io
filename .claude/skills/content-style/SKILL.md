@@ -11,7 +11,9 @@ Aplique estas regras a qualquer texto escrito para os campos `pain`, `cure`, `ex
 
 ## Pontuação
 
-**Nunca use travessão (—) nem meia-risca (–).**
+**Nunca use travessão (—), meia-risca (–) nem `---` como substituto de travessão em meio a texto.**
+
+O `---` sozinho em linha própria é separador horizontal (válido). Dentro de títulos, frases ou parágrafos, é proibido.
 
 Substitua sempre por uma das alternativas abaixo, dependendo do contexto:
 
