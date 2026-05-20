@@ -1,0 +1,1 @@
+[ok] Adicionar as imagens do adapter assets>imagens>adapter_1.png, adapter_2.png
