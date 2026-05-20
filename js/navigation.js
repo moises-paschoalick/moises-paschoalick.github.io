@@ -6,6 +6,11 @@ const mainContentElement = document.getElementById('main-content');
 const loaderElement = document.getElementById('content-loader');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
+const sidebarToggle = document.querySelector('.sidebar-toggle');
+const sidebarBackdrop = document.querySelector('.sidebar-backdrop');
+
+sidebarToggle.addEventListener('click', () => document.body.classList.toggle('sidebar-open'));
+sidebarBackdrop.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
 
 async function init() {
     try {
@@ -36,6 +41,9 @@ async function navigateToTopic(index) {
 
     currentTopicIndex = index;
     const topic = topics[index];
+
+    // Fechar sidebar no mobile ao navegar
+    if (window.innerWidth <= 768) document.body.classList.remove('sidebar-open');
 
     // Atualizar Hash sem recarregar
     window.location.hash = topic.id;
@@ -101,11 +109,11 @@ function renderContent(content) {
         
         <div class="context-grid">
             <section class="card card-pain">
-                <h3>🤕 A DOR</h3>
+                <h3>A DOR</h3>
                 <p>${content.pain}</p>
             </section>
             <section class="card card-cure">
-                <h3>✨ A CURA</h3>
+                <h3>A SOLUÇÃO</h3>
                 <p>${content.cure}</p>
             </section>
         </div>
